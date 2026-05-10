@@ -39,8 +39,7 @@ public class BrinquedoController {
     }
 
     @DeleteMapping("/{id}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deletar(@PathVariable Long id) {
-        service.deletar(id);
+    public String deletar(@PathVariable Long id) {
+        return service.deletar(id);
     }
 }

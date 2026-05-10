@@ -42,9 +42,10 @@ public class BrinquedoService {
         return mapper.toResponse(repository.save(brinquedo));
     }
 
-    public void deletar(Long id) {
-        repository.findById(id)
+    public String deletar(Long id) {
+        Brinquedo brinquedo = repository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Brinquedo não encontrado com id: " + id));
         repository.deleteById(id);
+        return "O produto " + brinquedo.getNome() + " de id " + id + " foi excluido com sucesso.";
     }
 }
