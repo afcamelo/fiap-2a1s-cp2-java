@@ -12,9 +12,6 @@ target/
 *.project
 .settings/
 
-# Credenciais — NUNCA commitar
-src/main/resources/application.properties
-
 # Arquivos internos do projeto
 .github/TODO.md
 .github/cp2.instructions.md
