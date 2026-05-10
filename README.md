@@ -71,7 +71,6 @@ API REST para gerenciamento de brinquedos, desenvolvida com Spring Boot 3, Java 
 
 ```json
 {
-  "id": 1,
   "nome": "Carrinho de Controle Remoto",
   "tipo": "Veículo",
   "classificacao": "Livre",
@@ -112,10 +111,34 @@ fiap.com.br.cp2brinquedos
 
 ## Prints das telas (Postman)
 
-> Adicionar os prints das telas do Postman aqui após os testes.
-
 - `GET /brinquedos` – listagem completa
+  <img width="624" height="462" alt="image" src="https://github.com/user-attachments/assets/28ab00c3-6c53-4fcf-9de4-87d969f95b0c" />
+
 - `GET /brinquedos/{id}` – busca por ID
+  > Em caso de sucesso
+  <img width="588" height="320" alt="image" src="https://github.com/user-attachments/assets/e826ebed-078e-47a5-afe2-e41defca304f" />
+  
+  > Em caso de erro
+  <img width="579" height="245" alt="image" src="https://github.com/user-attachments/assets/f532cb10-7f7b-44a7-8a86-a4e9688d2196" />
+
 - `POST /brinquedos` – criação com JSON
+  > Em caso de sucesso
+  <img width="590" height="481" alt="image" src="https://github.com/user-attachments/assets/35aa60c3-5326-4e5b-b6a1-eacabd7c0a2e" />
+
+  > Em caso de erro
+  <img width="593" height="417" alt="image" src="https://github.com/user-attachments/assets/500e0456-985e-4bfa-9daf-8aaf2ca19780" />
+
 - `PUT /brinquedos/{id}` – atualização
-- `DELETE /brinquedos/{id}` – exclusão (204 No Content)
+  > Em caso de sucesso
+  <img width="590" height="484" alt="image" src="https://github.com/user-attachments/assets/66fea6eb-e3b1-498e-b58e-e44648e02307" />
+
+  > Em caso de erro
+  <img width="592" height="408" alt="image" src="https://github.com/user-attachments/assets/050934a6-98f4-476d-a5aa-af42c44648c1" />
+
+- `DELETE /brinquedos/{id}`
+  > Em caso de sucesso
+  <img width="586" height="213" alt="image" src="https://github.com/user-attachments/assets/fe64a82f-2e6c-4965-8b49-b22de803e09c" />
+
+  > Em caso de erro
+  <img width="586" height="250" alt="image" src="https://github.com/user-attachments/assets/23231780-d0e6-4431-8fdc-9efffe631093" />
+
