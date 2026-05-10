@@ -6,6 +6,7 @@ import fiap.com.br.cp2brinquedos.service.BrinquedoService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,28 +19,27 @@ public class BrinquedoController {
     private final BrinquedoService service;
 
     @GetMapping
-    public List<BrinquedoResponse> listar() {
-        return service.listarTodos();
+    public ResponseEntity<List<BrinquedoResponse>> listar() {
+        return ResponseEntity.ok(service.listarTodos());
     }
 
     @GetMapping("/{id}")
-    public BrinquedoResponse buscar(@PathVariable Long id) {
-        return service.buscarPorId(id);
+    public ResponseEntity<BrinquedoResponse> buscar(@PathVariable Long id) {
+        return ResponseEntity.ok(service.buscarPorId(id));
     }
 
     @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    public BrinquedoResponse criar(@Valid @RequestBody BrinquedoDto dto) {
-        return service.criar(dto);
+    public ResponseEntity<BrinquedoResponse> criar(@Valid @RequestBody BrinquedoDto dto) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(service.criar(dto));
     }
 
     @PutMapping("/{id}")
-    public BrinquedoResponse atualizar(@PathVariable Long id, @Valid @RequestBody BrinquedoDto dto) {
-        return service.atualizar(id, dto);
+    public ResponseEntity<BrinquedoResponse> atualizar(@PathVariable Long id, @Valid @RequestBody BrinquedoDto dto) {
+        return ResponseEntity.ok(service.atualizar(id, dto));
     }
 
     @DeleteMapping("/{id}")
-    public String deletar(@PathVariable Long id) {
-        return service.deletar(id);
+    public ResponseEntity<String> deletar(@PathVariable Long id) {
+        return ResponseEntity.ok(service.deletar(id));
     }
 }
